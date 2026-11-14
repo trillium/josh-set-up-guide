@@ -1,4 +1,4 @@
-# Mac mini setup: runner-up + firstmate
+# Josh set up guide: Mac mini with runner-up + firstmate
 
 Do these in order. Each step is one thing. Total time: about 30 minutes.
 
@@ -12,8 +12,10 @@ Do these in order. Each step is one thing. Total time: about 30 minutes.
 
 1. Install Homebrew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 2. Follow the two "Next steps" lines Homebrew prints (they add it to your PATH).
-3. Install GitHub CLI and git: `brew install gh git`
-4. Sign in to GitHub: `gh auth login` (choose GitHub.com, HTTPS, browser).
+3. Install the tools: `brew install gh git node herdr && brew install --cask wezterm tailscale`
+4. Open Tailscale from Applications and sign in.
+5. Sign in to GitHub: `gh auth login` (choose GitHub.com, HTTPS, browser).
+6. Open **WezTerm** and do the rest of this guide in it.
 
 ## 3. Fork and install runner-up
 
@@ -36,9 +38,19 @@ Use it in a workflow with `runs-on: my-mac`.
 
 1. `git clone https://github.com/kunchenguid/firstmate`
 2. `cd firstmate`
-3. `claude` (if the command is missing: `brew install --cask claude-code`)
+3. Install the firstmate helper tools (`gh-axi`, `chrome-devtools-axi`, `tasks-axi`, `treehouse`, `no-mistakes`): follow the install section of the firstmate README in this folder. If a command is missing, `claude` will tell you which one.
+4. `claude` (if the command is missing: `brew install --cask claude-code`)
 
-Done: your Mac runs your GitHub jobs and firstmate is open.
+## 6. Install herdr web
+
+herdr web is a browser view of your herdr panes.
+
+1. Start herdr in WezTerm: `herdr`
+2. Download the macOS tarball from https://github.com/kcosr/herdr-web/releases (latest release).
+3. Unpack it and run: `tar -xzf herdr-web-*.tar.gz && cd herdr-web-* && bin/herdr-web`
+4. Open http://127.0.0.1:8787 in your browser. Over Tailscale, use `http://YOUR-MAC-NAME:8787` from your phone.
+
+Done: your Mac runs your GitHub jobs, and herdr, herdr web, WezTerm, Tailscale and firstmate are all installed.
 
 ## If something fails
 
