@@ -50,7 +50,20 @@ herdr web is a browser view of your herdr panes.
 3. Unpack it and run: `tar -xzf herdr-web-*.tar.gz && cd herdr-web-* && bin/herdr-web`
 4. Open http://127.0.0.1:8787 in your browser. Over Tailscale, use `http://YOUR-MAC-NAME:8787` from your phone.
 
-Done: your Mac runs your GitHub jobs, and herdr, herdr web, WezTerm, Tailscale and firstmate are all installed.
+## 7. Install the pi harness and sign in with your ChatGPT subscription
+
+pi is the coding-agent harness. It can run on your ChatGPT Plus or Pro plan, so no API key is needed.
+
+1. Install it: `npm install -g @earendil-works/pi-coding-agent`
+2. Start it in any folder: `pi`
+3. At the pi prompt type `/login`.
+4. Pick the ChatGPT option (listed as OpenAI Codex / ChatGPT Plus/Pro).
+5. Your browser opens. Sign in to the ChatGPT account that has the subscription and approve.
+6. Back in pi, type `/model` and pick a GPT model from the list.
+7. Check it works: type `say hello` and confirm it answers.
+8. To use pi with firstmate, tell firstmate in `claude` that pi is installed and signed in.
+
+Done: your Mac runs your GitHub jobs, and herdr, herdr web, WezTerm, Tailscale, firstmate and pi (on your ChatGPT plan) are all installed.
 
 ## If something fails
 
